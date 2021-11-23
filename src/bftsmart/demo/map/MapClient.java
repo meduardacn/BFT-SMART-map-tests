@@ -184,15 +184,15 @@ public class MapClient<K, V> implements Map<K, V>{
 		System.out.println("####### GET ######");
 		System.out.println("Tempo Médio: "+st_get.getAverage(false)+" milissec");
 		System.out.println("Desvio Padrão: "+st_get.getDP(false) +" milissec");
-		System.out.println("####### REMOVE ######");
-		System.out.println("Tempo Médio: "+st_remove.getAverage(false)+" milissec");
-		System.out.println("Desvio Padrão: "+st_remove.getDP(false) +" milissec");
-		System.out.println("####### SIZE ######");
-		System.out.println("Tempo Médio: "+st_size.getAverage(false)+" milissec");
-		System.out.println("Desvio Padrão: "+st_size.getDP(false) +" milissec");
-		System.out.println("####### KEYSET ######");
-		System.out.println("Tempo Médio: "+st_keyset.getAverage(false)+" milissec");
-		System.out.println("Desvio Padrão: "+st_keyset.getDP(false) +" milissec");
+		// System.out.println("####### REMOVE ######");
+		// System.out.println("Tempo Médio: "+st_remove.getAverage(false)+" milissec");
+		// System.out.println("Desvio Padrão: "+st_remove.getDP(false) +" milissec");
+		// System.out.println("####### SIZE ######");
+		// System.out.println("Tempo Médio: "+st_size.getAverage(false)+" milissec");
+		// System.out.println("Desvio Padrão: "+st_size.getDP(false) +" milissec");
+		// System.out.println("####### KEYSET ######");
+		// System.out.println("Tempo Médio: "+st_keyset.getAverage(false)+" milissec");
+		// System.out.println("Desvio Padrão: "+st_keyset.getDP(false) +" milissec");
 
 	}
 
