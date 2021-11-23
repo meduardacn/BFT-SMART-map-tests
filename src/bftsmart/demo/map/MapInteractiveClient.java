@@ -89,12 +89,6 @@ public class MapInteractiveClient {
 		for(int i = 0; i< operations;i++){
 			map.put(i+"", i+"");
 			map.get(i+"");
-			map.size();
-		}
-
-		for(int i = 0; i< operations;i++){
-			map.keySet();
-			map.remove(i+"");
 		}
 		// if(operations != 0){
 		// 	int keySize = map.keySet().size();
