@@ -43,6 +43,7 @@ public class MapServer<K, V> extends DefaultSingleRecoverable {
 		K key = null;
 		V value = null;
 		boolean hasReply = false;
+		int intKey = 0;
 		try (ByteArrayInputStream byteIn = new ByteArrayInputStream(command);
 				ObjectInput objIn = new ObjectInputStream(byteIn);
 				ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
@@ -51,6 +52,8 @@ public class MapServer<K, V> extends DefaultSingleRecoverable {
 			switch (reqType) {
 				case PUT:
 					key = (K)objIn.readObject();
+					intKey = Integer.parseInt(key.toString());
+					if(intKey % 100 == 0) System.out.println("PUT "+intKey);
 					value = (V)objIn.readObject();
 					V oldValue = replicaMap.put(key, value);
 					if (oldValue != null) {
@@ -60,6 +63,8 @@ public class MapServer<K, V> extends DefaultSingleRecoverable {
 					break;
 				case GET:
 					key = (K)objIn.readObject();
+					intKey = Integer.parseInt(key.toString());
+					if(intKey % 100 == 0) System.out.println("GET "+intKey);
 					value = replicaMap.get(key);
 					if (value != null) {
 						objOut.writeObject(value);
@@ -68,6 +73,8 @@ public class MapServer<K, V> extends DefaultSingleRecoverable {
 					break;
 				case REMOVE:
 					key = (K)objIn.readObject();
+					intKey = Integer.parseInt(key.toString());
+					if(intKey % 100 == 0) System.out.println("REMOVE "+intKey);
 					value = replicaMap.remove(key);
 					if (value != null) {
 						objOut.writeObject(value);
