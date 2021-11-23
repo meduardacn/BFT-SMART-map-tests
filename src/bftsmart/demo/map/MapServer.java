@@ -82,11 +82,13 @@ public class MapServer<K, V> extends DefaultSingleRecoverable {
 					}
 					break;
 				case SIZE:
+					System.out.println("SIZE");
 					int size = replicaMap.size();
 					objOut.writeInt(size);
 					hasReply = true;
 					break;
 				case KEYSET:
+					System.out.println("KEYSIZE");
 					keySet(objOut);
 					hasReply = true;
 					break;

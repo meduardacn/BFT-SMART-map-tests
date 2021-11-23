@@ -87,6 +87,7 @@ public class MapInteractiveClient {
 		MapClient<String, String> map = new MapClient<>(clientId, operations);
 	
 		for(int i = 0; i< operations;i++){
+			if(i % 100 == 0) System.out.println("REQ");
 			map.put(i+"", i+"");
 			map.get(i+"");
 		}
